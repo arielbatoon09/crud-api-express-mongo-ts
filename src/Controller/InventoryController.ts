@@ -65,18 +65,18 @@ class InvetoryController {
 
     public deleteItem = async (request: Request, response: Response): Promise<Response> => {
         try {
-            const { id } = request.params;
-            await InventoryModel.findByIdAndDelete({ _id: id });
+            const { id } = request.body;
 
-            return response.status(200).json({ message: 'Deleted item.', response: 'success' });
+            // Bulk Delete
+            if (Array.isArray(id)) {
+                await InventoryModel.deleteMany({ _id: { $in: id } });
+                return response.status(200).json({ message: 'Bulk delete successfully.', response: 'success' });
+            } else {
+                // Single Delete
+                await InventoryModel.findByIdAndDelete({ _id: id });
 
-        } catch (error) {
-            return response.sendStatus(400);
-        }
-    };
-
-    public bulkDelete = async (request: Request, response: Response) => {
-        try {
+                return response.status(200).json({ message: 'Deleted item.', response: 'success' });
+            }
 
         } catch (error) {
             return response.sendStatus(400);

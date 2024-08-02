@@ -8,7 +8,7 @@ npm i express @types/express nodemon mongoose @types/mongoose typescript ts-node
 
 ## To-Do List
 1. Develop a simple CRUD API by using MCR (Model, Controller, Routes) pattern (Done)
-2. Add Bulk Delete functionality
+2. Add Bulk Delete functionality (Done)
 3. Add Services pattern (Model, Controller, Services, Routes)
 4. Authentication & Middleware
 5. Connect User to Simple CRUD

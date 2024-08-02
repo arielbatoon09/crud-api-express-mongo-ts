@@ -7,6 +7,6 @@ router.get('/inventory', InventoryController.getAllInventoryList);
 router.get('/inventory/:id', InventoryController.getItem);
 router.post('/inventory', InventoryController.addNewItem);
 router.put('/inventory/:id', InventoryController.updateItem);
-router.delete('/inventory/:id', InventoryController.deleteItem);
+router.post('/inventory/delete', InventoryController.deleteItem);
 
 export default router;
