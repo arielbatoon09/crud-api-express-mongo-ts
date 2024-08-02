@@ -1,12 +1,12 @@
 import express from 'express';
-import EmployeeController from '../Controller/InventoryController';
+import InventoryController from '../Controller/InventoryController';
 
 const router = express.Router();
 
-router.get('/inventory', EmployeeController.getAllInventoryList);
-router.get('/inventory/:id', EmployeeController.getItem);
-router.post('/inventory', EmployeeController.addNewItem);
-router.put('/inventory/:id', EmployeeController.updateItem);
-router.delete('/inventory/:id', EmployeeController.deleteItem);
+router.get('/inventory', InventoryController.getAllInventoryList);
+router.get('/inventory/:id', InventoryController.getItem);
+router.post('/inventory', InventoryController.addNewItem);
+router.put('/inventory/:id', InventoryController.updateItem);
+router.delete('/inventory/:id', InventoryController.deleteItem);
 
 export default router;
