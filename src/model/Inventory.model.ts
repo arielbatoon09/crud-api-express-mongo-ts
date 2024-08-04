@@ -26,6 +26,7 @@ const InventorySchema: Schema<Inventory> = new Schema({
     },
 }, {
     timestamps: true,
+    collection: 'inventory'
 });
 
 export const InventoryModel = mongoose.model<Inventory>('Inventory', InventorySchema);
